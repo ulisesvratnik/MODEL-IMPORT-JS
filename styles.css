@@ -100,7 +100,7 @@ p {
     top: 15px;
     right: 15px;
     font-size: 20px;
-    color: royalblue;
+    color: red;
     border: none;
     background-color: white;
 }
@@ -141,8 +141,6 @@ p {
 .boton-eliminar:focus {
     outline: none;
 }
-
-
 
 .logo{
     width: 110px;
@@ -234,7 +232,7 @@ nav ul li a:hover{
 .testimonios_header h2{
 	font-size: 2.9rem;
 	font-weight: 500;
-	background-color: #f9004d;
+	background-color: blue;
 	color: white;
 	padding: 10px 20px;
 }
@@ -342,3 +340,4 @@ background-color: #252525;
     align-items: center;
     margin: 0.5rem;
 }
+
