@@ -1,5 +1,5 @@
 let stockProductos = [
-    {id: 1, nombre: "Smartwacht Y13", color: "DORADO", precio: 12.999, precioAnterior: 15.999, img: './imagenes/Y13 GOLD.PNG', cantidad: 1,},
+    {id: 1, nombre: "Smartwacht Y13", color: "DORADO", precio: 12.999, precioAnterior: 15.999, img: './imagenes/y13gold.png', cantidad: 1,},
     {id: 2, nombre: "Smartwacht Y13", color: "NEGRO", precio: 12.999, precioAnterior: 15.999, img: './imagenes/y13black.PNG', cantidad: 1,},
     {id: 3, nombre: "Smartwacht Y13", color: "ROSA", precio: 12.999, precioAnterior: 15.999, img: './imagenes/Y13 PINK.PNG', cantidad: 1,},
     {id: 4, nombre: "Smartwacht T55", color: "BLANCO", precio: 9.999, precioAnterior: 13.999, img: './imagenes/T55 BLANCO.PNG', cantidad: 1,},
