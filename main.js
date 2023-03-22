@@ -11,6 +11,7 @@ const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
+
 let carrito = []
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito()
     }
 })
-//SEXTO PASO
 botonVaciar.addEventListener('click', () => {
     carrito.length = 0
     actualizarCarrito()
@@ -86,7 +86,7 @@ const actualizarCarrito = () => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
         div.innerHTML = `
-        <p>${prod.nombre}</p>
+        <p>${prod.nombre} ${prod.color}</p>
         <p>Precio:$${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
         <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
@@ -101,59 +101,67 @@ const actualizarCarrito = () => {
     contadorCarrito.innerText = carrito.length
 
     console.log(carrito)
-    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
-}
-
-const formulario = document.querySelector("#formulario")
-const boton = document.querySelector("#boton")
-const resultado = document.querySelector("#resultado")
-
-const filtrar = ()=>{
-
-    resultado.innerHTML = "";
-   const texto = formulario.value.toLowerCase()
-   for(let producto of stockProductos){
-    let nombre = stockProductos.nombre.toLowerCase()
-    if(nombre.indexOf(texto) !== -1){
-        const div = document.createElement('div')
-        div.classList.add('producto')
-        div.innerHTML = `
-        <img src = "${prod.img}" class = "card-img-tom imagenproductos">    
-        <h2 class="fs-3" text-center> ${producto.nombre} ${producto.color} </h2>
-        <h3 class= "text-center fs-2"> $${producto.precio} <del>$${producto.precioAnterior}</del> </h3>
-        <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
-    
-        `
-    }
-   }
-
-   if(resultado.innerHTML === ""){
-    resultado.innerHTML += `
-    <li>Producto no encontrado...</li>
-    `
-   }
+    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0).toFixed(3)
 }
 
 //MODAL
-boton.addEventListener("click", filtrar)
-
 const contenedorModal = document.getElementsByClassName('modal-contenedor')[0]
 const botonAbrir = document.getElementById('boton-carrito')
 const botonCerrar = document.getElementById('carritoCerrar')
 const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
 
 
-botonAbrir.addEventListener('click', ()=>{
+botonAbrir.addEventListener('click', () => {
     contenedorModal.classList.toggle('modal-active')
 })
-botonCerrar.addEventListener('click', ()=>{
+botonCerrar.addEventListener('click', () => {
     contenedorModal.classList.toggle('modal-active')
 })
 
-contenedorModal.addEventListener('click', (event) =>{
+contenedorModal.addEventListener('click', (event) => {
     contenedorModal.classList.toggle('modal-active')
 
 })
 modalCarrito.addEventListener('click', (event) => {
-    event.stopPropagation() 
+    event.stopPropagation()
+})
+
+// LIBRERIAS
+const btnFinalizarCompra = document.querySelector('#btnFinalizarCompra')
+btnFinalizarCompra.addEventListener('click', () => {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+
+  swalWithBootstrapButtons.fire({
+    title: '¿Deseas finalizar su compra?',
+    text: "Al presionar SI confirmara su compra.",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Si, deseo finalizar mi compra',
+    cancelButtonText: 'No, me arrepenti',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      swalWithBootstrapButtons.fire(
+        'Compra realizada con exito',
+        '¡Muchas gracias por confiar en Model Import!',
+        'success'
+      )
+    } else if (
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire(
+        'Compra Cancelada',
+        'Lo invitamos a que siga visitando nuestro sitio :)',
+        'error',
+        '5000',
+        ''
+      )
+    }
+  })
 })

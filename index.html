@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,12 +12,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <!-- LOGO -->
-    <link rel="icon" type="image/x-icon" href="imagenes/logonuevo2.png">
+    <link rel="icon" type="image/x-" href="imagenes/logonuevo2.png">
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/f7e7a68181.js" crossorigin="anonymous"></script>
+    <!-- LIBRERIAS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -27,28 +28,21 @@
             <a href="#" class="navbar-brand">
                 <img src="/imagenes/logo blanco.jpeg" alt="" class="logo">
             </a>
-            <h1>MODEL IMPORT</h1>
         </div>
-        <nav>
-            <ul>
+        <div class="grupo">
+            <ul class="navegacion">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Productos</a></li>
-                <li><a href="#">Nuestros clientes</a></li>
                 <li><a href="#">Contactanos</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
             </ul>
-        </nav>
-        <div class="busqueda">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="formulario" placeholder="Buscar">
-            <button class="btn btn-info mb-2" id="boton">Buscar</button>
-        </div>
-        <div>
-            <button id="boton-carrito"><i class="fa-solid fa-cart-shopping"></i><span
-                    id="contadorCarrito">0</span></button>
-        </div>
+            <div>
+                <button id="boton-carrito"><i class="fa-solid fa-cart-shopping"></i><span
+                        id="contadorCarrito">0</span></button>
+            </div>
     </header>
-<ul id="resultado">
-</ul>
+    <ul id="resultado">
+    </ul>
     <main id="contenedor-productos">
     </main>
 
@@ -60,141 +54,144 @@
             </div>
             <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
             <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+            <button id="btnFinalizarCompra" class="boton-finalizar">Finalizar compra</button>
         </div>
     </div>
+
     <!------TESTIMONIOS------>
 
-<div class="testimonios">
-    <div class="testimonios_header">
-        <h1 class="title">Comentarios</h1>
-        <h2>Nuestros clientes</h2>
+    <div class="testimonios">
+        <div class="testimonios_header">
+            <h1 class="title">Comentarios</h1>
+            <h2>Nuestros clientes</h2>
+        </div>
+
+
+        <!-- TESTIMONIOS CONTENEDOR -->
+        <div class="testimonios_contenedor">
+            <!-- CAJA1 -->
+            <div class="testimonios_caja">
+                <div class="caja-top">
+                    <div class="perfil">
+                        <div class="perfil-img">
+                            <img src="/imagenes/maria teresa.jpg" alt="">
+                        </div>
+                        <!-- NOMBRE Y USUARIO -->
+                        <div class="name-user">
+                            <strong>Maria Teresa</strong>
+                            <span>@Marita</span>
+                        </div>
+                    </div>
+                    <!-- RESEÑAS -->
+                    <div class="resenas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- COMENTARIOS -->
+                <div class="comentarios_clientes">
+                    <p>Buenos precios, web actualizada compre en la mañana y pase a la tarde a retirar personalmente, ya
+                        tenian el producto apartado esperando aunque no avise que iba.</p>
+                </div>
+            </div>
+
+            <div class="testimonios_caja">
+                <div class="caja-top">
+                    <div class="perfil">
+                        <div class="perfil-img">
+                            <img src="/imagenes/Alejandro Diaz.jpg" alt="">
+                        </div>
+                        <!-- NOMBRE Y USUARIO -->
+                        <div class="name-user">
+                            <strong>Jose Alejandro Diaz</strong>
+                            <span>@JoseDiaz</span>
+                        </div>
+                    </div>
+                    <!-- RESEÑAS -->
+                    <div class="resenas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- COMENTARIOS -->
+                <div class="comentarios_clientes">
+                    <p>Exelente atención, asesoramiento y calidad en auriculares y Smartwatch.</p>
+                </div>
+            </div>
+
+            <div class="testimonios_caja">
+                <div class="caja-top">
+                    <div class="perfil">
+                        <div class="perfil-img">
+                            <img src="/imagenes/rosa gomez.jpg" alt="">
+                        </div>
+                        <!-- NOMBRE Y USUARIO -->
+                        <div class="name-user">
+                            <strong>Rosa Gomez</strong>
+                            <span>@Rosita</span>
+                        </div>
+                    </div>
+                    <!-- RESEÑAS -->
+                    <div class="resenas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- COMENTARIOS -->
+                <div class="comentarios_clientes">
+                    <p>Compré dos auriculares para celular muy buenos, a buenos precios. Muy buena atención y medios de
+                        pago variados.</p>
+                </div>
+            </div>
+
+            <div class="testimonios_caja">
+                <div class="caja-top">
+                    <div class="perfil">
+                        <div class="perfil-img">
+                            <img src="/imagenes/gonzalo rodriguez.jpg" alt="">
+                        </div>
+                        <!-- NOMBRE Y USUARIO -->
+                        <div class="name-user">
+                            <strong>Gonzalo Rodriguez</strong>
+                            <span>@GonzaRodri</span>
+                        </div>
+                    </div>
+                    <!-- RESEÑAS -->
+                    <div class="resenas">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- COMENTARIOS -->
+                <div class="comentarios_clientes">
+                    <p>Es mi primera compra en esta empresa y debo decir que he quedado muy gratamente sorprendido. El
+                        producto llego en el tiempo establecido y en perfectas condiciones, cosa que no siempre pasa. La
+                        atención telefónica es digna de destacar, respondió todas mis preguntas al instante y no me dejo
+                        ninguna duda. Para mi Model Import es altamente recomendable.</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <!-- TESTIMONIOS CONTENEDOR -->
-    <div class="testimonios_contenedor">
-        <!-- CAJA1 -->
-        <div class="testimonios_caja">
-            <div class="caja-top">
-                <div class="perfil">
-                    <div class="perfil-img">
-                        <img src="/imagenes/maria teresa.jpg" alt="">
-                    </div>
-                    <!-- NOMBRE Y USUARIO -->
-                    <div class="name-user">
-                        <strong>Maria Teresa</strong>
-                        <span>@Marita</span>
-                    </div>
-                </div>
-                <!-- RESEÑAS -->
-                <div class="resenas">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            <!-- COMENTARIOS -->
-            <div class="comentarios_clientes">
-                <p>Buenos precios, web actualizada compre en la mañana y pase a la tarde a retirar personalmente, ya
-                    tenian el producto apartado esperando aunque no avise que iba.</p>
-            </div>
-        </div>
-
-        <div class="testimonios_caja">
-            <div class="caja-top">
-                <div class="perfil">
-                    <div class="perfil-img">
-                        <img src="/imagenes/Alejandro Diaz.jpg" alt="">
-                    </div>
-                    <!-- NOMBRE Y USUARIO -->
-                    <div class="name-user">
-                        <strong>Jose Alejandro Diaz</strong>
-                        <span>@JoseDiaz</span>
-                    </div>
-                </div>
-                <!-- RESEÑAS -->
-                <div class="resenas">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            <!-- COMENTARIOS -->
-            <div class="comentarios_clientes">
-                <p>Exelente atención, asesoramiento y calidad en auriculares y Smartwatch.</p>
-            </div>
-        </div>
-
-        <div class="testimonios_caja">
-            <div class="caja-top">
-                <div class="perfil">
-                    <div class="perfil-img">
-                        <img src="/imagenes/rosa gomez.jpg" alt="">
-                    </div>
-                    <!-- NOMBRE Y USUARIO -->
-                    <div class="name-user">
-                        <strong>Rosa Gomez</strong>
-                        <span>@Rosita</span>
-                    </div>
-                </div>
-                <!-- RESEÑAS -->
-                <div class="resenas">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            <!-- COMENTARIOS -->
-            <div class="comentarios_clientes">
-                <p>Compré dos auriculares para celular muy buenos, a buenos precios. Muy buena atención y medios de
-                    pago variados.</p>
-            </div>
-        </div>
-
-        <div class="testimonios_caja">
-            <div class="caja-top">
-                <div class="perfil">
-                    <div class="perfil-img">
-                        <img src="/imagenes/gonzalo rodriguez.jpg" alt="">
-                    </div>
-                    <!-- NOMBRE Y USUARIO -->
-                    <div class="name-user">
-                        <strong>Gonzalo Rodriguez</strong>
-                        <span>@GonzaRodri</span>
-                    </div>
-                </div>
-                <!-- RESEÑAS -->
-                <div class="resenas">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            <!-- COMENTARIOS -->
-            <div class="comentarios_clientes">
-                <p>Es mi primera compra en esta empresa y debo decir que he quedado muy gratamente sorprendido. El
-                    producto llego en el tiempo establecido y en perfectas condiciones, cosa que no siempre pasa. La
-                    atención telefónica es digna de destacar, respondió todas mis preguntas al instante y no me dejo
-                    ninguna duda. Para mi Model Import es altamente recomendable.</p>
-            </div>
-        </div>
-    </div>
-</div>
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <!-- JS -->
-    <script defer src="stock.js"></script>
-    <script defer src="main.js"></script>
+    <script src="stock.js"></script>
+    <script src="main.js"></script>
+    <script src="navegacion.js"></script>
 </body>
 
 </html>
