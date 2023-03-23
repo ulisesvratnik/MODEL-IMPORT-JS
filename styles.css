@@ -33,7 +33,7 @@ header {
 
 .logo {
 	width: 130px;
-	height: 80px;
+	height: 100px;
 
 }
 
@@ -63,6 +63,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	background: #fff
 }
 
 .producto {
