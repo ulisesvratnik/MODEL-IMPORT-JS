@@ -14,7 +14,7 @@ let stockProductos = [
     {id: 13, nombre: "AURICULAR I12", color: "BLANCO", precio: 3.999, precioAnterior: 5.999, img: './imagenes/i12white.png', cantidad: 1,},
     {id: 14, nombre: "AURICULAR I12", color: "NEGRO", precio: 3.999, precioAnterior: 5.999, img: './imagenes/i12black.png', cantidad: 1,},
     {id: 15, nombre: "AURICULAR I12", color: "ROSA", precio: 3.999, precioAnterior: 5.999, img: './imagenes/i12pink.png', cantidad: 1,},
-    {id: 16, nombre: "AURICULAR I12 PRO", color: "BLANCO", precio: 4.999, precioAnterior: 5.999, img: '/imagenes/i12prowhite.png', cantidad: 1,},
+    {id: 16, nombre: "AURICULAR I12 PRO", color: "BLANCO", precio: 4.999, precioAnterior: 5.999, img: './imagenes/i12prowhite.png', cantidad: 1,},
     {id: 17, nombre: "AURICULAR I12 PRO", color: "NEGRO", precio: 4.999, precioAnterior: 7.999, img: './imagenes/i12problack.png', cantidad: 1,},
     {id: 18, nombre: "AURICULAR I12 PRO", color: "ROSA", precio: 4.999, precioAnterior: 7.999, img: './imagenes/i12propink.png', cantidad: 1,},
 ]
