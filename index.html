@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,13 @@
     <!-- TIPOGRAFIA -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+<!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <!-- LOGO -->
     <link rel="icon" type="image/x-" href="./imagenes/logonuevo2.png">
@@ -23,26 +30,39 @@
 </head>
 
 <body>
-    <header>
-        <div class="container-logo">
-            <a href="#" class="navbar-brand">
-                <img src="imagenes/logonuevo.jpeg" alt="" class="logo">
-            </a>
-        </div>
-        <div class="grupo">
-            <ul class="navegacion">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Comentarios</a></li>
-                <li><a href="#">Contactanos</a></li>
-                <li><a href="#">Sobre Nosotros</a></li>
-            </ul>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#"><img src="imagenes/logonuevo.jpeg" alt="Logo" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item fs-4" href="#Productos">Todos Los Productos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item fs-4" href="#Productos">Articulos Populares</a></li>
+                                <li><a class="dropdown-item fs-4" href="#Productos">Recien Llegados</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="#Comentarios">Comentarios</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#Contactanos">Contactanos</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#Nosotros">Nosotros</a></li>
+                    </ul>
+                    <button id="boton-carrito"><i class="fa-solid fa-cart-shopping"></i><span
+                            id="contadorCarrito">0</span></button>
+                </div>
             </div>
-            <div>
-                <button id="boton-carrito"><i class="fa-solid fa-cart-shopping"></i><span
-                        id="contadorCarrito">0</span></button>
-            </div>
-    </header>
+        </nav>
+    </div>
 
     <div class="hero">
         <div class="content">
@@ -56,9 +76,11 @@
             </div>
         </div>
     </div>
-    
+
     <ul id="resultado">
     </ul>
+    <a name="Productos"></a>
+    <h1 class="text-center text-uppercase my-3">Catalogo de Productos</h1>
     <main id="contenedor-productos">
     </main>
 
@@ -69,21 +91,17 @@
             <div id="carrito-contenedor">
             </div>
             <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
-            <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
-            <button id="btnFinalizarCompra" class="boton-finalizar">Finalizar compra</button>
+            <button id="vaciar-carrito" class="btn btnn-outline-dark" onclick="vaciar()">Vaciar carrito</button>
+            <button id="seguirComprando" class="btn btnn-outline-dark" onclick="location.href='#Productos'">Seguir
+                comprando</button>
+            <button id="finalizar-compra" class="btn btnn-outline-dark" onclick="finalizar()">Finalizar compra</button>
         </div>
     </div>
 
-
-
     <!------TESTIMONIOS------>
-
     <div class="testimonios">
-        <div class="testimonios_header">
-            <h1 class="title">Comentarios</h1>
-            <h2>Nuestros clientes</h2>
-        </div>
-
+        <a name="Comentarios"></a>
+        <h1 class="text-center text-uppercase my-3">Comentarios de nuestros clientes</h1>
 
         <!-- TESTIMONIOS CONTENEDOR -->
         <div class="testimonios_contenedor">
@@ -203,28 +221,83 @@
         </div>
     </div>
 
+    <a name="Contactanos"></a>
+    <div class="menu">
+
+        <div class="container-contacto">
+            <div class="content-contacto">
+                <div class="info-contacto">
+                    <h2 class="titulo-contacto">Información</h2>
+                    <p class="texto-contacto" id="contacto">A la brevedad nuestros expertos se pondrán en contacto para
+                        ayudarte a resolver todas tus dudas.¡Estamos para ayudarte!</p>
+                    <div class="contacto titulo-contacto">
+                        <a href="tel:+54011-23875205">
+                            <i class="fa fa-phone"></i>
+                            <span id="telefono"></span>
+
+                        </a>
+                        <a href="mailto:TecnologiaVR@outlook.com?subject=Interesado%20en%20sus%20productos">
+                            <i class="fa fa-envelope"></i>
+                            <span id="emailE"></span>
+                        </a>
+                        <a href="#">
+                            <i class="fa fa-map-marked"></i>
+                            <span id="direccion"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="formulario">
+                    <h2 class="titulo-contacto" id="tituloContacto">Formulario De Contacto</h2>
+                    <form class="form texto-contacto" id="form">
+                        <input type="text" name="name" placeholder="Nombre Completo" class="campo" required>
+                        <div class="box">
+                            <input type="text" name="email" placeholder="Email" class="campo" required>
+                            <input type="text" name="subject" placeholder="Asunto" class="campo" required>
+                        </div>
+                        <textarea name="message" id="mensaje" placeholder="Mensaje..." class="campo"></textarea>
+                        <div>
+                            <input type="submit" id="button" class="btn btn--1 titulo-contacto" value="ENVIAR MENSAJE">
+                            </input>
+                            <button type="reset" name="btnenviar"
+                                class="btn btn--1 titulo-contacto">RESTABLECER</button>
+                        </div>
+                    </form>
+                    <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                    <script type="text/javascript">
+                        emailjs.init('5eYqq8ToavJKuN2XP')
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a name="Nosotros"></a>
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
                 <div class="figura">
-                        <h2 class="hfooteer text-center">ENCONTRANOS EN</h2>
-                        <iframe class="mapa "
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.478565497767!2d-122.032905584695!3d37.33117737984255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b7176a341d%3A0x4ae040c5bfc59fcd!2s1%20Infinite%20Loop%2C%20Cupertino%2C%20CA%2095014%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1650232208110!5m2!1ses!2sar"
-                            width="273" height="220" style="border:0;" title="mapamarca" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>  
+                    <h2 class="hfooter">ENCONTRANOS EN</h2>
+                    <iframe class="mapa "
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.478565497767!2d-122.032905584695!3d37.33117737984255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b7176a341d%3A0x4ae040c5bfc59fcd!2s1%20Infinite%20Loop%2C%20Cupertino%2C%20CA%2095014%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1650232208110!5m2!1ses!2sar"
+                        width="273" height="220" style="border:0;" title="mapamarca" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </a>
                 </div>
             </div>
             <div class="box">
-                <h2 class="hfooteer text-center">SOBRE NOSOTROS</h2>
-                <p class="text text-center">Somos una tienda online de productos tecnológicos. Nos caracterizamos por seleccionar y
+                <h2 class="hfooteer">SOBRE NOSOTROS</h2>
+                <p class="text">Somos una tienda online de productos tecnológicos. Nos caracterizamos por
+                    seleccionar y
                     ofrecer
                     la mejor variedad de modelos y así encontrar todo lo que buscan en un solo lugar.</p>
-                <p class="text text-center"> Nuestra atención personalizada hace que día a día nos elijan y nos sigan eligiendo.
+                <p class="text"> Nuestra atención personalizada hace que día a día nos elijan y nos sigan
+                    eligiendo.
                     Nuestra meta es seguir creciendo y ampliar nuestra variedad de productos.
                 </p>
             </div>
             <div class="box">
-                <h2 class="hfooteer text-center">SIGAMOS CONECTADOS</h2>
+                <h2 class="hfooter">SIGAMOS CONECTADOS</h2>
                 <div class="red-social">
                     <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank"></a>
                     <a href="https://www.instagram.com/model.import/" target="_blank" class="fa fa-instagram"></a>
@@ -233,8 +306,8 @@
                 </div>
             </div>
         </div>
-        <div class="grupo-2 text-center">
-            <small class="text-center">&copy; 2022 <b>Model Import</b> - Todos los Derechos Reservados.</small>
+        <div class="grupo-2">
+            <small>&copy; 2023 <b>Model Import</b> - Todos los Derechos Reservados.</small>
         </div>
     </footer>
 
